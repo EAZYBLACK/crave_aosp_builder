@@ -334,7 +334,7 @@ jobs:
         fi \
         
         # Sync the repositories
-        /opt/crave/resync.sh  && \
+        bash .repo/local_manifests/setup.sh && /opt/crave/resync.sh && bash .repo/local_manifests/rom.sh && \
         
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
